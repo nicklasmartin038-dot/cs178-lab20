@@ -103,17 +103,17 @@ def apply_dark_theme(fig):
     return fig
 
 
-def build_bad_chart(df):
-    """
-    Builds the deliberately broken pie chart.
-    """
-    fig = px.pie(
-        df,
-        names="stat",    # raw API names — not human-readable
-        values="value",
-        color="stat",    # rainbow — one color per stat, conveys nothing
-    )
-    return apply_dark_theme(fig)
+# def build_bad_chart(df):
+#     """
+#     Builds the deliberately broken pie chart.
+#     """
+#     fig = px.pie(
+#         df,
+#         names="stat",    # raw API names — not human-readable
+#         values="value",
+#         color="stat",    # rainbow — one color per stat, conveys nothing
+#     )
+#     return apply_dark_theme(fig)
 
 
 def build_good_chart(df, display_name, types):
@@ -192,22 +192,22 @@ def build_good_chart(df, display_name, types):
     return apply_dark_theme(good_fig)
 
 
-# def build_my_chart(df, display_name, types):
-#     """
-#     TODO (Part B): Students replace this placeholder with their own chart.
+def build_my_chart(df, display_name, types):
+    """
+    TODO (Part B): Students replace this placeholder with their own chart.
 
-#     Use 'df' — it has two columns: "stat" and "value".
-#     'types' is available here too if you want to use the type color.
-#     Pick a chart type different from both the pie and the radar.
-#     Your chart should work well for any Pokémon, not just Charizard.
-#     """
-#     # ── Replace this placeholder with your own chart ───────────────────────────
-#     fig = go.Figure()
-#     fig.update_layout(
-#         title="Your chart goes here — edit build_my_chart() in app.py",
-#     )
-#     # ── End of placeholder ─────────────────────────────────────────────────────
-#     return apply_dark_theme(fig)
+    Use 'df' — it has two columns: "stat" and "value".
+    'types' is available here too if you want to use the type color.
+    Pick a chart type different from both the pie and the radar.
+    Your chart should work well for any Pokémon, not just Charizard.
+    """
+    # ── Replace this placeholder with your own chart ───────────────────────────
+    fig = go.Figure()
+    fig.update_layout(
+        title="Your chart goes here — edit build_my_chart() in app.py",
+    )
+    # ── End of placeholder ─────────────────────────────────────────────────────
+    return apply_dark_theme(fig)
 
 
 # ── Helper ────────────────────────────────────────────────────────────────────
