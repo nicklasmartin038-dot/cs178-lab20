@@ -196,13 +196,19 @@ def build_my_chart(df, display_name, types):
     Pick a chart type different from both the pie and the radar.
     Your chart should work well for any Pokémon, not just Charizard.
     """
-    # ── Replace this placeholder with your own chart ───────────────────────────
-    fig = go.Figure()
-    fig.update_layout(
-        title="Your chart goes here — edit build_my_chart() in app.py",
-    )
-    # ── End of placeholder ─────────────────────────────────────────────────────
-    return apply_dark_theme(fig)
+    my_fig = px.bar(
+    df.sort_values("value", ascending=True),
+    x="value",
+    y="stat",
+    orientation="h",
+    title=f"{display_name} — Base Stats Ranked",
+    labels={
+        "value": "Base Stat Value",
+        "stat": "Stat"
+    },
+    color_discrete_sequence=["#0072B2"]
+)
+    return apply_dark_theme(my_fig)
 
 
 # ── Helper ────────────────────────────────────────────────────────────────────
