@@ -146,6 +146,16 @@ def build_good_chart(df, display_name, types):
 
     good_fig = go.Figure()
 
+    hex_color = TYPE_COLORS[types[0]]
+
+    r = int(hex_color[1:3], 16)
+    g = int(hex_color[3:5], 16)
+    b = int(hex_color[5:7], 16)
+
+    fill = f"rgba({r}, {g}, {b}, 0.3)"
+    border = f"rgba({r}, {g}, {b}, 1.0)"
+
+
     good_fig.add_trace(go.Scatterpolar(
         r=values_closed,
         theta=stats_closed,
@@ -170,21 +180,7 @@ def build_good_chart(df, display_name, types):
     #           primary type is "fire" the color would be TYPE_COLORS["fire"].
     #           Use types[0] to always get the primary type dynamically.
 
-    hex_color = TYPE_COLORS[types[0]]
 
-    r = int(hex_color[1:3], 16)
-    g = int(hex_color[3:5], 16)
-    b = int(hex_color[5:7], 16)
-
-    fill = f"rgba({r}, {g}, {b}, 0.3)"
-    border = f"rgba({r}, {g}, {b}, 1.0)"
-
-    good_fig = px.pie(
-        df,
-        names="stat",
-        values="value",
-        color="stat",
-    )
 
 
     # ── END ────────────────────────────────────────────────────────────────────
