@@ -103,7 +103,7 @@ def apply_dark_theme(fig):
     return fig
 
 
-# def build_bad_chart(df):
+def build_bad_chart(df):
 #     """
 #     Builds the deliberately broken pie chart.
 #     """
