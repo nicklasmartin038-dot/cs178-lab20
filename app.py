@@ -104,17 +104,16 @@ def apply_dark_theme(fig):
 
 
 def build_bad_chart(df):
-#     """
-#     Builds the deliberately broken pie chart.
-#     """
-#     fig = px.pie(
-#         df,
-#         names="stat",    # raw API names — not human-readable
-#         values="value",
-#         color="stat",    # rainbow — one color per stat, conveys nothing
-#     )
-#     return apply_dark_theme(fig)
-
+    """
+    Builds the deliberately broken pie chart.
+    """
+    fig = px.pie(
+        df,
+        names="stat",    # raw API names — not human-readable
+        values="value",
+        color="stat",    # rainbow — one color per stat, conveys nothing
+    )
+    return apply_dark_theme(fig)
 
 def build_good_chart(df, display_name, types):
     """
